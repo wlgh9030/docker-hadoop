@@ -9,7 +9,7 @@ echo "start hadoop-master container..."
 sudo docker run --restart="always" \
                 --ip 192.168.10.21 \
                 -itd \
-                --net=hadoop \
+                --net=hadoop-net \
                 -v hadoop-master:/vol \
                 -p 50070:50070 \
                 -p 6379:6379 \
@@ -18,7 +18,7 @@ sudo docker run --restart="always" \
                 -p 22:22\
                 --name hadoop-master \
                 --hostname hadoop-master \
-                jeonjiho/jeon-openec:v3 &> /dev/null
+                jeonjiho/jeon-openec:v6 &> /dev/null
 
 
 # start hadoop slave container
@@ -31,11 +31,11 @@ do
                         --ip 192.168.10.$(( $i + 21 )) \
                         -v hadoop-slave$i:/vol \
                         -itd \
-	                --net=hadoop \
+	                --net=hadoop-net \
                         -p $((22+i)):22\
 	                --name hadoop-slave$i \
 	                --hostname hadoop-slave$i \
-	                jeonjiho/jeon-openec:v3 &> /dev/null
+	                jeonjiho/jeon-openec:v6 &> /dev/null
 	i=$(( $i + 1 ))
 done 
 
