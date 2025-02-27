@@ -1,72 +1,90 @@
 # Docker Hadoop Project
 
-이 프로젝트는 Docker를 사용하여 Hadoop 클러스터를 구축하고 OpenEC를 동작시키는 프레임워크를 자동화 하기 위해 수행되었습니다.
+이 프로젝트는 Docker를 사용하여 Hadoop 클러스터를 구축하고 OpenEC를 동작시키는 프레임워크를 자동화하기 위해 수행되었습니다.
 
-## 설치 방법
+---
 
-###1. Docker 및 Docker Compose 설치
-'''
+## 🚀 설치 방법
+
+### **1. Docker 및 Docker Compose 설치**
+```bash
 sudo apt update && sudo apt upgrade -y
-'''
-'''
+```
+```bash
 sudo apt install -y docker.io
-'''
-'''
+```
+```bash
 sudo service docker start
-'''
-###2. Docker Image Pull
-'''
+```
+
+### **2. Docker Image Pull**
+```bash
 sudo docker pull jeonjiho/jeon-openec:v6
-'''
-###3. 원하는 클러스터 수에 맞춰 환경 변수 등 변경
-'''
+```
+
+### **3. 원하는 클러스터 수에 맞추어 환경 변수 등 변경**
+```bash
 ./resize-cluster.sh 14
-'''
-###4. master-slave 노드 일괄 실행(ip 및 포트 개폐 자동 설정)
-'''
+```
+
+### **4. Master-Slave 노드 일간 실행 (IP 및 포트 개포 자동 설정)**
+```bash
 ./start-container.sh 14
-'''
-###5. OpenEC 환경 파일 수정
-''' 
+```
+
+### **5. OpenEC 환경 파일 수정**
+```bash
 nano /home/openec/openec-v1.0.0/conf/sysSetting.xml
-'''
- - "local.addr"을 해당 컨테이너 ip로 변경
-###6. redis 서버 재부팅
-'''
+```
+- `"local.addr"`을 해당 컬러네이너 IP로 변경
+
+### **6. Redis 서버 재복지**
+```bash
 sudo rm /var/run/redis_6379.pid
-'''
-'''
+```
+```bash
 sudo service redis_6379 start
-'''
-###7. 하둡 파일 시스템 초기화
-'''
+```
+
+### **7. 하두빅 파일 시스템 초기화**
+```bash
 hdfs namenode -format
-'''
-###8. 하둡 파일 시스템 실행
-'''
+```
+
+### **8. 하두빅 파일 시스템 실행**
+```bash
 start-dfs.sh
-'''
-###9. OpenEC 프레임워크 실행
-'''
+```
+
+### **9. OpenEC 프레임워크 실행**
+```bash
 python /home/openec/openec-v1.0.0/script/start.py
-'''
+```
 
-## 네트워크
+---
 
-NameNode: 192.168.10.21
-DataNode: 192.168.10.22 ~ 34 (13개)
+## 🌐 네트워크 구성
+- **NameNode**: `192.168.10.21`
+- **DataNode**: `192.168.10.22 ~ 192.168.10.34` (총 13개)
 
-## 기여
+---
 
-PR(Pull Request)을 환영합니다. 개선 사항이 있다면 자유롭게 참여해 주세요.
+## 🤝 기여
+PR(Pull Request)을 환영합니다. 개조 사항이 있다면 자유롭게 참여해 주세요.
 
-## 라이선스
+---
 
-Apache License
-Version 2.0, January 2004
-http://www.apache.org/licenses/
+## 📝 라이센스
+**Apache License**  
+Version 2.0, January 2004  
+[http://www.apache.org/licenses/](http://www.apache.org/licenses/)
 
-Copyright 2025 [Your Name]
-
+```
+Copyright 2025 [JEONJIHO817]
+```
 This project is licensed under the Apache License 2.0.  
-It is based on the work available at [https://github.com/kiwenlau/hadoop-cluster-docker.git] & [http://adslab.cse.cuhk.edu.hk/software/openec/].
+It is based on the work available at:
+- [Hadoop Cluster Docker](https://github.com/kiwenlau/hadoop-cluster-docker.git)
+- [OpenEC](http://adslab.cse.cuhk.edu.hk/software/openec/)
+
+
