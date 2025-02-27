@@ -27,7 +27,7 @@ sudo docker pull jeonjiho/jeon-openec:v6
 ./resize-cluster.sh 14
 ```
 
-### **4. Master-Slave 노드 일간 실행 (IP 및 포트 개포 자동 설정)**
+### **4. Master-Slave 컨테이너 일괄 실행 (IP 및 포트 개폐 자동 설정)**
 ```bash
 ./start-container.sh 14
 ```
@@ -36,9 +36,9 @@ sudo docker pull jeonjiho/jeon-openec:v6
 ```bash
 nano /home/openec/openec-v1.0.0/conf/sysSetting.xml
 ```
-- `"local.addr"`을 해당 컬러네이너 IP로 변경
+- `"local.addr"`을 해당 컨테이너 IP로 변경
 
-### **6. Redis 서버 재복지**
+### **6. Redis 서버 재부팅**
 ```bash
 sudo rm /var/run/redis_6379.pid
 ```
@@ -46,12 +46,12 @@ sudo rm /var/run/redis_6379.pid
 sudo service redis_6379 start
 ```
 
-### **7. 하두빅 파일 시스템 초기화**
+### **7. Hadoop File System 초기화**
 ```bash
 hdfs namenode -format
 ```
 
-### **8. 하두빅 파일 시스템 실행**
+### **8. Hadoop File System 실행**
 ```bash
 start-dfs.sh
 ```
@@ -86,5 +86,3 @@ This project is licensed under the Apache License 2.0.
 It is based on the work available at:
 - [Hadoop Cluster Docker](https://github.com/kiwenlau/hadoop-cluster-docker.git)
 - [OpenEC](http://adslab.cse.cuhk.edu.hk/software/openec/)
-
-
