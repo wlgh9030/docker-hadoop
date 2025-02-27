@@ -11,7 +11,7 @@
 sudo apt update && sudo apt upgrade -y
 ```
 ```bash
-sudo apt install -y docker.io
+sudo apt install -y docker.io docker-compose
 ```
 ```bash
 sudo service docker start
