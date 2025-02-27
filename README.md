@@ -27,7 +27,7 @@ sudo docker pull jeonjiho/jeon-openec:v6
 ./resize-cluster.sh 14
 ```
 
-### **4. Master-Slave 컨테이너 일괄 실행 (IP 및 포트 개폐 자동 설정)**
+### **4. Master-Slave 컨테이너 일괄 실행 (IP 및 포트 개폐, OpenEC 통합 등 자동화)**
 ```bash
 ./start-container.sh 14
 ```
