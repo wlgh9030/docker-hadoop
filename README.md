@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 설치 방법
+## 설치 방법
 
 ### **1. Docker 및 Docker Compose 설치**
 ```bash
@@ -63,18 +63,18 @@ python /home/openec/openec-v1.0.0/script/start.py
 
 ---
 
-## 🌐 네트워크 구성
+## 네트워크 구성
 - **NameNode**: `192.168.10.21`
 - **DataNode**: `192.168.10.22 ~ 192.168.10.34` (총 13개)
 
 ---
 
-## 🤝 기여
+## 기여
 PR(Pull Request)을 환영합니다. 개조 사항이 있다면 자유롭게 참여해 주세요.
 
 ---
 
-## 📝 라이센스
+## 라이센스
 **Apache License**  
 Version 2.0, January 2004  
 [http://www.apache.org/licenses/](http://www.apache.org/licenses/)
